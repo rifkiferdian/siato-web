@@ -1,0 +1,39 @@
+# Konfigurasi lokal dan kredensial
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Pengaturan editor lokal
+.idea/
+.vscode/
+*.code-workspace
+*.swp
+*.swo
+*~
+
+# Metadata sistem operasi
+.DS_Store
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Log dan file sementara
+*.log
+*.tmp
+*.temp
+*.bak
+/tmp/
+/temp/
+/.cache/
+
+# Dependensi dan hasil tooling lokal (jika digunakan)
+node_modules/
+/coverage/
+/playwright-report/
+/test-results/
+/blob-report/
+
+# Aset website, dokumentasi sumber logo, dan lockfile tetap dilacak.
