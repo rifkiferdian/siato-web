@@ -62,7 +62,15 @@ document.querySelector('#demo-form').addEventListener('submit', event => {
   const campus = form.elements.campus.value.trim();
   const name = form.elements.name.value.trim();
   if (!campus || !name) { const input = !campus ? form.elements.campus : form.elements.name; input.setCustomValidity('Mohon isi informasi ini.'); input.reportValidity(); return; }
-  const message = `Halo tim SIATO, saya ${name} dari ${campus}. Saya ingin menjadwalkan demo dan konsultasi untuk ${form.elements.interest.value}. Mohon informasi jadwal yang tersedia. Terima kasih.`;
+  const message = [
+    'Halo Tim SIATO, saya ingin menjadwalkan demo aplikasi.',
+    '',
+    `Nama Perguruan Tinggi: ${campus}`,
+    `Nama: ${name}`,
+    `Solusi yang Diminati: ${form.elements.interest.value}`,
+    '',
+    'Mohon informasi jadwal demo yang tersedia. Terima kasih.'
+  ].join('\n');
   window.open(`https://wa.me/6285977258471?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
 });
 document.querySelectorAll('#demo-form input').forEach(input => input.addEventListener('input', () => input.setCustomValidity('')));
